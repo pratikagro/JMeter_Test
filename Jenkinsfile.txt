@@ -17,7 +17,7 @@ pipeline {
             steps {
                 bat """
                 "%JMETER_HOME%\\bin\\jmeter.bat" -n ^
-                -t "Practive Thread Group-000002.jmx" ^
+                -t "Jenkins.jmx" ^
                 -l results.jtl ^
                 -e ^
                 -o report
