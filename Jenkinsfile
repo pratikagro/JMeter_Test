@@ -16,6 +16,9 @@ pipeline {
         stage('Run JMeter Test') {
             steps {
                 bat """
+				if exist report rmdir /s /q report
+				if exist results.jtl del /f /q results.jtl
+				
                 "%JMETER_HOME%\\bin\\jmeter.bat" -n ^
                 -t "${params.SCRIPT_NAME}" ^
                 -l results.jtl ^
