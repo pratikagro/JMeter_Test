@@ -17,7 +17,7 @@ pipeline {
             steps {
                 bat """
                 "%JMETER_HOME%\\bin\\jmeter.bat" -n ^
-                -t "Jenkins.jmx" ^
+                -t "${params.SCRIPT_NAME}" ^
                 -l results.jtl ^
                 -e ^
                 -o report
