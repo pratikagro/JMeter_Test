@@ -27,6 +27,19 @@ pipeline {
                 """
             }
         }
+		
+		stage('Publish JMeter Report') {
+            steps {
+                publishHTML(target: [
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
+                    reportDir: 'report',
+                    reportFiles: 'index.html',
+                    reportName: 'JMeter HTML Report'
+                ])
+            }
+        }
     }
 
     post {
